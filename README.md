@@ -156,9 +156,6 @@ npm run build
 npm run pox
 ```
 
-## Publishing Notes
-
-The package is configured with:
-- `bin.pox -> dist/cli.js` for `npx pox`
-- `tsup` build for minified ESM bundles in `dist/`
-- `prepublishOnly` to enforce typecheck + build before publish
+## Notes
+- This is a project which I used for internal testing while building some of my own projects.
+- If you feel it's missing something, fork it.
