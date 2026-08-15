@@ -1,0 +1,37 @@
+{
+  "name": "pox",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "description": "Agent evaluation and trajectory testing framework",
+  "bin": {
+    "pox": "./dist/cli.js"
+  },
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup --config tsup.config.ts",
+    "prepublishOnly": "npm run typecheck && npm run build",
+    "pox": "tsx src/cli.ts",
+    "test:groq": "npm run pox -- --dir .",
+    "typecheck": "tsc --noEmit",
+    "start": "node dist/cli.js"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsup": "^8.5.1",
+    "tsx": "^4.23.12",
+    "typescript": "^5.9.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "commander": "^15.0.0",
+    "dotenv": "^17.4.2"
+  }
+}
